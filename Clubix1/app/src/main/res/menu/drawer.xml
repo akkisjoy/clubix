@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home"
+            android:checked="false"
+            android:icon="@drawable/home"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/events"
+            android:checked="false"
+            android:icon="@drawable/events"
+            android:title="Events" />
+
+        <item
+            android:id="@+id/nightlifes"
+            android:checked="false"
+            android:icon="@drawable/nightlifes"
+            android:title="Nightlifes" />
+
+        <item
+            android:id="@+id/clubs"
+            android:checked="false"
+            android:icon="@drawable/clubs"
+            android:title="Clubs" />
+
+        <item
+            android:id="@+id/artists"
+            android:checked="false"
+            android:icon="@drawable/artists"
+            android:title="Artists" />
+        <item
+            android:id="@+id/music"
+            android:checked="false"
+            android:icon="@drawable/music"
+            android:title="Music" />
+        <item
+            android:id="@+id/alerts"
+            android:checked="false"
+            android:icon="@drawable/alerts"
+            android:title="Alerts" />
+        <item
+            android:id="@+id/booking"
+            android:checked="false"
+            android:icon="@drawable/my_booking"
+            android:title="My Booking" />
+        <item
+            android:id="@+id/preferences"
+            android:checked="false"
+            android:icon="@drawable/prefrences"
+            android:title="Preferences" />
+        <item
+            android:id="@+id/location"
+            android:checked="false"
+            android:icon="@drawable/home"
+            android:title="Location" />
+        <item
+            android:id="@+id/topics"
+            android:checked="false"
+            android:icon="@drawable/tell_us"
+            android:title="Your Topics" />
+        <item
+            android:id="@+id/invite"
+            android:checked="false"
+            android:icon="@drawable/invite_friends"
+            android:title="Invite Friends" />
+        <item
+            android:id="@+id/terms"
+            android:checked="false"
+            android:icon="@drawable/terms_condition"
+            android:title="Terms &amp; Conditions" />
+        <item
+            android:id="@+id/policy"
+            android:checked="false"
+            android:icon="@drawable/ic_launcher"
+            android:title="Privacy Policy" />
+    </group>
+</menu>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:whatever="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_search_icon"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:paddingBottom="5.0dip"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip"
+            android:paddingTop="5.0dip"
+            android:src="@drawable/whitesearchicon" />
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="select 10 or more artists"
+            android:textColor="@android:color/white"
+            android:textSize="15.0sp" />
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:paddingBottom="5.0dip"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip"
+            android:paddingTop="5.0dip"
+            android:src="@drawable/rightwhite" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/sv_main"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.prolificwebworks.theclubix.cpicker.CollectionPicker
+                android:id="@+id/artist_picker"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                whatever:cp_addIcon="@drawable/notselected"
+                whatever:cp_cancelIcon="@drawable/selected"
+                whatever:cp_itemBackgroundNormal="@android:color/transparent"
+                whatever:cp_itemBackgroundPressed="@android:color/transparent"
+                whatever:cp_itemMargin="8dp"
+                whatever:cp_itemRadius="5dp"
+                whatever:cp_itemTextColor="@android:color/white"
+                whatever:cp_textPaddingBottom="5dip"
+                whatever:cp_textPaddingRight="35dp"
+                whatever:cp_textPaddingTop="7dip" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
