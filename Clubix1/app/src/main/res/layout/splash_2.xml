@@ -9,14 +9,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="70dp"
-        android:background="@drawable/rect_corner"
+        android:background="@drawable/click_rectback"
         android:paddingBottom="7dp"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
         android:paddingTop="5dp"
         android:text="Let's groove"
-        android:textColor="@color/colorAccent2"
-        android:textSize="15sp"
+        android:textColor="@drawable/click_text"
+        android:textSize="17sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

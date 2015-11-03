@@ -18,15 +18,13 @@
     <string name="title_invite">Invite Friends</string>
     <string name="title_terms">Terms &amp; Conditions</string>
     <string name="title_policy">Privacy Policy</string>
+    <string name="title_feedback">Feedback</string>
 
-    <string name="fb_id">523057161197139</string>
+    <string name="fb_id">522153614552886</string>
 
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
         <item>@string/title_home</item>
-        <item>@string/title_event</item>
-        <item>@string/title_nightlife</item>
-        <item>@string/title_music</item>
         <item>@string/title_alert</item>
         <item>@string/title_booking</item>
         <item>@string/title_preference</item>
@@ -35,6 +33,9 @@
         <item>@string/title_invite</item>
         <item>@string/title_terms</item>
         <item>@string/title_policy</item>
-
+        <item>@string/title_feedback</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

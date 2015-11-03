@@ -43,7 +43,7 @@ public class AllCLubAdapter extends RecyclerView.Adapter<AllCLubAdapter.ViewHold
     @Override
     public void onBindViewHolder(AllCLubAdapter.ViewHolder holder, int position) {
 
-        holder.firstTimeText.setText(clubDataList.get(position).getCub_name());
+        holder.firstTimeText.setText(clubDataList.get(position).getRestaurant_name());
     }
 
     @Override
@@ -72,9 +72,9 @@ public class AllCLubAdapter extends RecyclerView.Adapter<AllCLubAdapter.ViewHold
         @Override
         public void onClick(View v) {
 
-            if (clubIdsList.contains(clubDataList.get(getAdapterPosition()).getCub_id())) {
-                clubIdsList.remove(clubDataList.get(getAdapterPosition()).getCub_id());
-            } else clubIdsList.add(clubDataList.get(getAdapterPosition()).getCub_id());
+            if (clubIdsList.contains(clubDataList.get(getAdapterPosition()).getPostId())) {
+                clubIdsList.remove(clubDataList.get(getAdapterPosition()).getPostId());
+            } else clubIdsList.add(clubDataList.get(getAdapterPosition()).getPostId());
 
             MyEnum.INSTANCE.setClub(clubIdsList);
 

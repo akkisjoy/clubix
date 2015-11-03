@@ -17,6 +17,8 @@ import com.prolificwebworks.theclubix.cpicker.Item;
 import com.prolificwebworks.theclubix.cpicker.OnItemClickListener;
 import com.prolificwebworks.theclubix.entities.Club;
 import com.prolificwebworks.theclubix.entities.ClubData;
+import com.prolificwebworks.theclubix.entities.Restaurant;
+import com.prolificwebworks.theclubix.entities.RestaurantData;
 import com.prolificwebworks.theclubix.server.Client;
 import com.prolificwebworks.theclubix.utils.MyEnum;
 
@@ -61,15 +63,14 @@ public class FirstClubFragment extends Fragment implements View.OnClickListener 
 
     private void callServiceTogetData() {
 
-        Client.INSTANCE.getAllClubs(new Callback<Club>() {
+        Client.INSTANCE.getAllRestaurants(new Callback<Restaurant>() {
             @Override
-            public void success(Club allEvents, Response response) {
+            public void success(Restaurant restaurant, Response response) {
                 List<Item> items = new ArrayList<>();
                 Log.e("setItems", items.size() + "");
-                for (int i = 0; i < allEvents.getPostData().size(); i++) {
-                    ClubData clubData = allEvents.getPostData().get(i);
-                    items.add(new Item("" + clubData.getCub_id(), clubData.getCub_name()));
-                    Log.e(allEvents.getPostData().get(i).getCub_id(), allEvents.getPostData().get(i).getCub_name() + "");
+                for (int i = 0; i < restaurant.getPostData().size(); i++) {
+                    RestaurantData restaurantData = restaurant.getPostData().get(i);
+                    items.add(new Item("" + restaurantData.getPostId(), restaurantData.getRestaurant_name()));
                 }
 
                 if (items.size() > 0) {

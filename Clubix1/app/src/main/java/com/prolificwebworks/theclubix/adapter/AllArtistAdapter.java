@@ -33,10 +33,9 @@ public class AllArtistAdapter extends RecyclerView.Adapter<AllArtistAdapter.View
         eventIdsList = new HashSet<>();
     }
 
-
     @Override
     public AllArtistAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_first_timer, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.event_recyclerview_row, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }

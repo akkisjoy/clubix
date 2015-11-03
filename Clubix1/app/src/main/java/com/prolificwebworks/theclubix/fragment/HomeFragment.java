@@ -21,6 +21,7 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.prolificwebworks.theclubix.R;
+import com.prolificwebworks.theclubix.activity.HomeActivity;
 import com.prolificwebworks.theclubix.adapter.EventPagerAdapter;
 import com.prolificwebworks.theclubix.entities.ArtistImage;
 import com.prolificwebworks.theclubix.entities.ClubImage;
@@ -49,6 +50,8 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.home, container, false);
+
+        ((HomeActivity) getActivity()).setActionBarTitle(getString(R.string.title_home));
 
         url_maps = new HashMap<>();
 
@@ -130,13 +133,15 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.homeArtist:
-                Toast.makeText(getActivity(), "Artist clicked", Toast.LENGTH_SHORT).show();
+                getFragmentManager().beginTransaction().replace(R.id.container_body, new ArtistList()).addToBackStack(null).commit();
+//                Toast.makeText(getActivity(), "Artist clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.homeClub:
-                Toast.makeText(getActivity(), "Club clicked", Toast.LENGTH_SHORT).show();
+                getFragmentManager().beginTransaction().replace(R.id.container_body, new RestaurantViewPager()).addToBackStack(null).commit();
+//                Toast.makeText(getActivity(), "Club clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.homeEvent:
-                getFragmentManager().beginTransaction().replace(R.id.container_body, new EventFragment()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.container_body, new EventFragment()).addToBackStack(null).commit();
                 break;
         }
     }
@@ -146,7 +151,7 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
             @Override
             public void success(HomeImage homeImage, Response response) {
 
-                Log.e("Success Size", homeImage.getPostData().get(0).getHeader_image().size()+"");
+                Log.e("Success Size", homeImage.getPostData().get(0).getHeader_image().size() + "");
                 for (int i = 0; i < homeImage.getPostData().get(0).getHeader_image().size(); i++) {
                     url_maps.put("Image" + i, homeImage.getPostData().get(0).getHeader_image().get(i));
                 }
@@ -191,6 +196,7 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
     public void onDestroy() {
         Picasso.with(getActivity()).cancelRequest(homeClub);
         Picasso.with(getActivity()).cancelRequest(homeArtist);
+
         super.onDestroy();
     }
 }

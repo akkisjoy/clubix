@@ -75,9 +75,9 @@ public class FirstArtistFragment extends Fragment implements View.OnClickListene
                     items.add(new Item("" + artistData.getPostId(), artistData.getPost_title()));
                     Log.e("" + artistData.getPostId(), artistData.getArtist_events());
                 }
+                progressDialog.dismiss();
 
                 if (items.size() > 0) {
-                    progressDialog.dismiss();
                     Log.e("setItems", items.size() + "");
                     mPicker.setItems(items);
                     mPicker.drawItemView();

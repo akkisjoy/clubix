@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.prolificwebworks.theclubix.R;
+import com.prolificwebworks.theclubix.activity.HomeActivity;
 import com.prolificwebworks.theclubix.adapter.EventPagerAdapter;
 
 /**
@@ -23,12 +24,13 @@ public class EventFragment extends Fragment {
         View v = inflater.inflate(R.layout.event_main,container,false);
 
         ViewPager viewPager = (ViewPager) v.findViewById(R.id.viewpager);
-        viewPager.setAdapter(new EventPagerAdapter(getActivity().getSupportFragmentManager(),
-                getActivity()));
+        viewPager.setAdapter(new EventPagerAdapter(getActivity().getSupportFragmentManager()));
 
         // Give the TabLayout the ViewPager
         TabLayout tabLayout = (TabLayout) v.findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        ((HomeActivity)getActivity()).setActionBarTitle(getString(R.string.title_event));
 
         return v;
     }

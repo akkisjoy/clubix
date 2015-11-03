@@ -35,9 +35,9 @@ public class FragmentDrawer extends Fragment {
     private NavigationDrawerAdapter adapter;
     private View containerView;
     private static String[] titles = null;
-    private static int[] images = {R.drawable.home, R.drawable.events, R.drawable.nightlifes, R.drawable.music,
-            R.drawable.alerts, R.drawable.my_booking, R.drawable.prefrences, R.drawable.home,
-            R.drawable.tell_us, R.drawable.invite_friends, R.drawable.terms_condition, R.drawable.terms_condition};
+    private static int[] images = {R.drawable.home,
+            R.drawable.alerts, R.drawable.my_booking, R.drawable.prefrences, R.drawable.location,
+            R.drawable.tell_us, R.drawable.invite_friends, R.drawable.terms_condition, R.drawable.terms_condition, R.drawable.tell_us};
     private FragmentDrawerListener drawerListener;
 
     public FragmentDrawer() {

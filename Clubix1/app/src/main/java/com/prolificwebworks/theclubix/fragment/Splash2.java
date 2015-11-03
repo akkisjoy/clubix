@@ -43,8 +43,11 @@ public class Splash2 extends Fragment {
                     getActivity().overridePendingTransition(android.R.anim.fade_in, 0);
                     getActivity().finish();
                 } else {
-                    Splash3 splash3 = new Splash3();
-                    getFragmentManager().beginTransaction().replace(R.id.frameSplash, splash3).commit();
+                    getFragmentManager().beginTransaction().replace(R.id.frameSplash, new Splash3()).commit();
+//                    Intent i = new Intent(getActivity().getApplicationContext(), HomeActivity.class);
+//                    getActivity().startActivity(i);
+//                    getActivity().overridePendingTransition(android.R.anim.fade_in, 0);
+//                    getActivity().finish();
                 }
             }
         });

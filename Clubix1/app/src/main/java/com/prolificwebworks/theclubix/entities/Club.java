@@ -1,10 +1,13 @@
 package com.prolificwebworks.theclubix.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 /**
  * Created by vaibhav on 10/10/15.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Club {
 
     private String message;

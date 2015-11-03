@@ -1,5 +1,6 @@
 package com.prolificwebworks.theclubix.adapter;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,12 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.prolificwebworks.theclubix.R;
+import com.prolificwebworks.theclubix.activity.SingleEventActivity;
 import com.prolificwebworks.theclubix.entities.EventData;
-import com.prolificwebworks.theclubix.fragment.SingleEventFragment;
 import com.prolificwebworks.theclubix.utils.CustomFont;
 import com.prolificwebworks.theclubix.utils.EventTime;
 import com.prolificwebworks.theclubix.utils.MyEnum;
-import com.prolificwebworks.theclubix.utils.StaticValue;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -63,7 +63,6 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
         EventData eventData = allEvents.get(position);
 
         holder.eventName.setText(eventData.getPost_title());
-        holder.location.setText(eventData.getEvent_address());
         holder.time.setText(eventData.getEvent_start_time());
         Picasso.with(context.getActivity()).load(eventData.getFeatured_image()).into(holder.imageBackground);
 
@@ -80,14 +79,13 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ImageView imageBackground;
-        public CustomFont eventName, location, time;
+        public CustomFont eventName, time;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             imageBackground = (ImageView) itemView.findViewById(R.id.image_view);
             eventName = (CustomFont) itemView.findViewById(R.id.event_name);
-            location = (CustomFont) itemView.findViewById(R.id.location);
             time = (CustomFont) itemView.findViewById(R.id.time);
 
             itemView.setOnClickListener(this);
@@ -97,8 +95,20 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.View
         @Override
         public void onClick(View v) {
 
-            SingleEventFragment fragment = SingleEventFragment.newInstance(allEvents.get(getAdapterPosition()).getPostId());
-            context.getFragmentManager().beginTransaction().replace(R.id.container_body, fragment).addToBackStack(null).commit();
+//            FragmentTransaction ft = context.getFragmentManager().beginTransaction();
+//            SingleEventFragment fragment = new SingleEventFragment();
+//            SingleEventFragment fragment = SingleEventFragment.newInstance(allEvents.get(getAdapterPosition()).getPostId());
+//            fragment.show(context.getFragmentManager().beginTransaction(), "lol");
+
+            Intent i = new Intent(context.getActivity().getApplicationContext(), SingleEventActivity.class);
+            i.putExtra("postId", allEvents.get(getAdapterPosition()).getPostId() + "");
+            context.getActivity().startActivity(i);
+            context.getActivity().overridePendingTransition(R.anim.slide_up, 0);
+
+
+
+//            fragment.show(fragment)
+//            context.getFragmentManager().beginTransaction().replace(R.id.container_body, fragment).addToBackStack(null).commit();
 
         }
     }

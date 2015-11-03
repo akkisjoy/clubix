@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.prolificwebworks.theclubix.fragment.EventSubSection;
 import com.prolificwebworks.theclubix.utils.EventTime;
@@ -12,13 +13,12 @@ import com.prolificwebworks.theclubix.utils.EventTime;
  * Created by Akki on 10/7/2015.
  */
 public class EventPagerAdapter extends FragmentPagerAdapter {
+
     final int PAGE_COUNT = 3;
     private String tabTitles[] = new String[]{EventTime.TODAY.name(), EventTime.TOMORROW.name(), EventTime.LATER.name()};
-    Context context;
 
-    public EventPagerAdapter(FragmentManager fm, Context context) {
+    public EventPagerAdapter(FragmentManager fm) {
         super(fm);
-        this.context = context;
     }
 
     @Override

@@ -1,11 +1,14 @@
 package com.prolificwebworks.theclubix.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 /**
  * Created by vaibhav on 9/10/15.
  */
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AllEvents
 {
     private String message;

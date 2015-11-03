@@ -3,50 +3,66 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/event_image_height">
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/image_view"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/event_image_height">
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
 
-        <ImageView
-            android:id="@+id/image_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/trans_gradient"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
 
         <com.prolificwebworks.theclubix.utils.CustomFont
-
             android:id="@+id/event_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textStyle="bold"
-            android:textSize="21sp"
-            android:layout_above="@+id/location"
-            android:text="event name" />
-
-        <com.prolificwebworks.theclubix.utils.CustomFont
-
-            android:id="@+id/location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/time"
-            android:drawableLeft="@drawable/location_small"
+            android:layout_above="@+id/rlay"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:paddingLeft="5dp"
-            android:gravity="center_vertical"
-            android:text="location" />
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text="event name"
+            android:textColor="@android:color/white"
+            android:textSize="17sp" />
 
-        <com.prolificwebworks.theclubix.utils.CustomFont
-            android:id="@+id/time"
-            android:drawableLeft="@drawable/time"
+        <LinearLayout
+            android:id="@+id/rlay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:gravity="center_vertical"
             android:layout_alignParentStart="true"
-            android:padding="5dp"
-            android:drawablePadding="10dp"
-            android:text="time" />
-    </RelativeLayout>
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:src="@drawable/clock" />
+
+            <com.prolificwebworks.theclubix.utils.CustomFont
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:padding="5dp"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="1"
+                android:text="time"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
